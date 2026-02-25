@@ -11,6 +11,12 @@ public struct SupabaseApiError: Decodable {
     let code: Int
     let errorCode: String
     let msg: String
+    
+    public init(code: Int, errorCode: String, msg: String) {
+        self.code = code
+        self.errorCode = errorCode
+        self.msg = msg
+    }
 
     enum CodingKeys: String, CodingKey {
         case code
