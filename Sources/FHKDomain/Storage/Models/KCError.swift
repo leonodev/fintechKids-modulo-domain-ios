@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum KCError: Error, Sendable {
+public enum KCError: Error, Sendable {
     case notFound
     case duplicate
     case unexpected(OSStatus)
@@ -22,7 +22,7 @@ enum KCError: Error, Sendable {
 }
 
 extension KCError: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         switch self {
         case .notFound: "Keychain item not found"
         case .duplicate: "Duplicate keychain item"
