@@ -17,3 +17,8 @@ public protocol FHKError: Error, Equatable {
 public extension FHKError {
     var titleUI: String { "" }
 }
+
+
+public protocol ServicesAPIProtocol: FHKInjectableProtocol {
+    func getURL(environment: EnvironmentType, serviceKey: ServiceType) throws -> String
+}

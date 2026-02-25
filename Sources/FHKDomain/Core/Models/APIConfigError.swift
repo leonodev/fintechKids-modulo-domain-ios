@@ -17,7 +17,3 @@ public enum APIConfigError: Error {
 public enum ServiceType: String {
     case supabase = "supabase"
 }
-
-public protocol ServicesAPIProtocol: FHKInjectableProtocol {
-    func getURL(environment: EnvironmentType, serviceKey: ServiceType) throws -> String
-}
