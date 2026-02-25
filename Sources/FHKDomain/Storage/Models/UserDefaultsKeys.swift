@@ -1,0 +1,10 @@
+//
+//  UserDefaultsKeys.swift
+//  FHKDomain
+//
+//  Created by Fredy Leon on 25/2/26.
+//
+
+public struct UserDefaultsKeys {
+    private init() {}
+}
