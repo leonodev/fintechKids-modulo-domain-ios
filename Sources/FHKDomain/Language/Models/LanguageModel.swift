@@ -13,7 +13,7 @@ public struct LanguageModel: Codable {
     let en: Bool
     let it: Bool
     
-    var enabledCodes: [String] {
+    public var enabledCodes: [String] {
         var codes: [String] = []
         if es { codes.append(LanguageType.es.code()) }
         if fr { codes.append(LanguageType.fr.code()) }
