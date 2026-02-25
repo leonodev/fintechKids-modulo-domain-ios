@@ -12,7 +12,7 @@ public enum KCError: Error, Sendable {
     case duplicate
     case unexpected(OSStatus)
     
-    static func from(status: OSStatus) -> Self {
+    public static func from(status: OSStatus) -> Self {
         switch status {
         case errSecItemNotFound: .notFound
         case errSecDuplicateItem: .duplicate
