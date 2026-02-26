@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol FHKModalProtocol {
+public protocol FHKModalProtocol: FHKInjectableProtocol {
     var isPresented: Bool { get set }
     var content: AnyView? { get set }
     func show<V: View>(@ViewBuilder _ content: () -> V)
