@@ -5,7 +5,7 @@
 //  Created by Fredy Leon on 26/2/26.
 //
 
-public enum Countries {
+public enum Countries: Sendable {
     case spanish
     case french
     case england
