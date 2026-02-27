@@ -1,5 +1,5 @@
 //
-//  SupabaseApiError.swift
+//  ApiError.swift
 //  FHKDomain
 //
 //  Created by Fredy Leon on 25/2/26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SupabaseApiError: Decodable {
+public struct FHKApiError: Decodable, Sendable {
     let code: Int
     let errorCode: String
     let msg: String
