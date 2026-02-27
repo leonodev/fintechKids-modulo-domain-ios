@@ -8,5 +8,5 @@
 public protocol AuthServiceFactory: Sendable {
     func makeAuthService(for platform: AuthPlatform,
                          country: Countries
-    ) throws -> any FHKSupabaseProtocol
+    ) throws -> any FHKAuthProtocol
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct FHKApiError: Decodable, Sendable {
+public struct FHKApiError: Error, Decodable, Sendable {
     let code: Int
     let errorCode: String
     let msg: String
