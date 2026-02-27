@@ -37,16 +37,23 @@ public struct FHKUserSession: Sendable {
     public let email: String
     public let accessToken: String?
     public let refreshToken: String?
+    public let expiresAt: Date?
     
     // Propiedad calculada para saber si realmente puede navegar por la app
     public var hasActiveSession: Bool {
         return accessToken != nil
     }
 
-    public init(id: UUID, email: String, accessToken: String? = nil, refreshToken: String? = nil) {
+    public init(id: UUID,
+                email: String,
+                accessToken: String? = nil,
+                refreshToken: String? = nil,
+                expiresAt: Date? = nil
+    ) {
         self.id = id
         self.email = email
         self.accessToken = accessToken
         self.refreshToken = refreshToken
+        self.expiresAt = expiresAt
     }
 }
