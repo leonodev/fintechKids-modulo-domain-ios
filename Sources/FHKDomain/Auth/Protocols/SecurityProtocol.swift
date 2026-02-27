@@ -14,8 +14,6 @@ public enum BiometryType {
 }
 
 public protocol FHKSecurityProtocol: FHKInjectableProtocol {
-    func generateSecuritySeed() -> Data?
-    func hashPassword(_ password: String, securitySeed: Data) -> String?
     func getBiometryType() -> BiometryType
     func getAnonKey() throws -> String
     var biometryIcon: String { get } 
