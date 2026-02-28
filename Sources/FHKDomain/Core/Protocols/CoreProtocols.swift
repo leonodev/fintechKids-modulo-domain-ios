@@ -19,7 +19,7 @@ public extension FHKError {
 }
 
 
-public protocol ServicesAPIProtocol: FHKInjectableProtocol {
+public protocol FHKServicesAPIProtocol: FHKInjectableProtocol {
     func getURL(environment: EnvironmentType,
                 country: Countries,
                 serviceKey: ServiceType) throws -> String
