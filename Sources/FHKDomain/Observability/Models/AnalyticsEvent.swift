@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum AnalyticsEvent {
+public enum AnalyticsEvent: Sendable {
     case screenView(Screen)
     case tapButton(Button)
     case error(ErrorDetail)
     
-    public struct Screen: Equatable {
+    public struct Screen: Equatable, Sendable {
         public let name: String
         public let screenClass: String
         
@@ -22,7 +22,7 @@ public enum AnalyticsEvent {
         }
     }
     
-    public struct Button: Equatable {
+    public struct Button: Equatable, Sendable {
         public let name: String
         
         public init(name: String) {
@@ -30,7 +30,7 @@ public enum AnalyticsEvent {
         }
     }
     
-    public struct ErrorDetail: Equatable {
+    public struct ErrorDetail: Equatable, Sendable {
         public let type: String
         public let message: String
         
