@@ -1,8 +1,8 @@
 //
-//  CoreProtocols.swift
+//  FHKError.swift
 //  FHKDomain
 //
-//  Created by Fredy Leon on 25/2/26.
+//  Created by Fredy Leon on 1/3/26.
 //
 
 import Foundation
@@ -16,11 +16,4 @@ public protocol FHKError: Error, Equatable {
 
 public extension FHKError {
     var titleUI: String { "" }
-}
-
-
-public protocol FHKServicesAPIProtocol: FHKInjectableProtocol {
-    func getURL(environment: EnvironmentType,
-                country: Countries,
-                serviceKey: ServiceType) throws -> String
 }
