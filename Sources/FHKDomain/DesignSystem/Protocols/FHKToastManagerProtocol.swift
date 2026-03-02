@@ -9,8 +9,8 @@ import FHKUtils
 
 @MainActor
 public protocol FHKToastManagerProtocol: Sendable {
-    var currentToast: ToastInfo? { get set }
+    var currentToast: FHKToastInfo? { get set }
     var isVisible: Bool { get set }
-    func show(info: ToastInfo, duration: Double)
+    func show(info: FHKToastInfo, duration: Double)
     func dismiss()
 }
