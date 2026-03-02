@@ -5,6 +5,8 @@
 //  Created by Fredy Leon on 2/3/26.
 //
 
+import FHKUtils
+
 @MainActor
 public protocol FHKToastManagerProtocol: Sendable {
     var currentToast: ToastInfo? { get set }
