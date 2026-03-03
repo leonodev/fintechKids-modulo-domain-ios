@@ -8,5 +8,5 @@
 @MainActor
 public protocol FHKRemoteConfigManagerProtocol: FHKInjectableProtocol {
     var enabledLanguages: [String] { get }
-    func fetchConfig(completion: @escaping (Error?) -> Void)
+    func fetchConfig() async throws
 }
