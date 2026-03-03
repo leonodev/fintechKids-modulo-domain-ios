@@ -7,6 +7,6 @@
 
 
 public protocol FHKLanguageRepositoryProtocol: FHKInjectableProtocol {
-    func fetchRemoteConfig(completion: @escaping ((any Error)?) -> Void)
+    func fetchRemoteConfig(completion: @escaping ((any Error)?) -> [String])
     func changeLanguageApp(_ language: String) async
 }
