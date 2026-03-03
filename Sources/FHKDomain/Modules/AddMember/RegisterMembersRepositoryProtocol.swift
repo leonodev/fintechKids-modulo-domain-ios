@@ -6,5 +6,5 @@
 //
 
 public protocol FHKRegisterMembersRepositoryProtocol: FHKInjectableProtocol {
-    func registerMembers(members: [FamilyMember])
+    func registerMembers(members: [FamilyMember]) async throws
 }
