@@ -6,5 +6,5 @@
 //
 
 public protocol FHKHomeRepositoryProtocol: FHKInjectableProtocol {
-    func fetchMembers(email: String) async throws
+    func fetchMembers(email: String) async throws -> [FamilyMember]
 }
