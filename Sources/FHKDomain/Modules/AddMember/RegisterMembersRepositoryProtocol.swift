@@ -5,6 +5,6 @@
 //  Created by Fredy Leon on 3/3/26.
 //
 
-public protocol RegisterMembersRepositoryProtocol: FHKInjectableProtocol {
+public protocol FHKRegisterMembersRepositoryProtocol: FHKInjectableProtocol {
     func registerMembers()
 }
