@@ -7,5 +7,4 @@
 
 public protocol RegisterRepositoryProtocol: FHKInjectableProtocol {
     func register(email: String, password: String) async throws -> FHKUserSession
-    func saveUserIntoKeychain(email: String) async throws
 }
