@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol FHKSupabaseMembersProtocol: AnyObject, Sendable {
-    func addMembers(members: [FamilyMember]) async throws
-    func fetchFamilyMembers(parentEmail: String) async throws -> [FamilyMember]
+    func addMembers(members: [MemberEntity]) async throws
+    func fetchFamilyMembers(parentEmail: String) async throws -> [MemberEntity]
     func deleteMember(identification: UUID) async throws
 }
