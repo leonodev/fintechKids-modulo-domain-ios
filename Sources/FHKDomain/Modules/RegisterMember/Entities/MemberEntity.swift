@@ -15,10 +15,12 @@ public struct MemberEntity: Identifiable, Hashable, Equatable {
     public let avatarName: String
     public var iconName: String = "trash"
     
-    public init(id: UUID,
+    
+    public init(id: UUID = UUID(),
                 emailParent: String,
                 memberName: String,
-                avatarName: String = "boy_9"
+                avatarName: String = "boy_9",
+                
     ) {
         self.id = id
         self.emailParent = emailParent
