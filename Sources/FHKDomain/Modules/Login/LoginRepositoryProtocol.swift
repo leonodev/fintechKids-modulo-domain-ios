@@ -11,6 +11,6 @@ public protocol FHKLoginRepositoryProtocol: FHKInjectableProtocol {
     func saveAuthToken(_ token: String, requiresBiometry: Bool) throws
     func saveUserIntoKeychain(email: String) async throws
     
-    func updateParentMail()
+    func refreshParentMail()
     var hasSavedToken: Bool { get }
 }
