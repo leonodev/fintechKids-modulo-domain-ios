@@ -12,3 +12,12 @@ public struct KeychainKeys {
 public extension KeychainKeys {
     static let userKey = "user_key"
 }
+
+public enum KeychainKey: String, CaseIterable, Sendable {
+    case authToken
+    case refreshToken
+    case userCredentials
+    case appSettings
+    case biometricData
+    case appLanguage
+}
