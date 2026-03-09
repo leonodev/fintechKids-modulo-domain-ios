@@ -13,11 +13,24 @@ public enum LanguageType: String, Sendable, Codable, Equatable {
     case it = "it"
     case fr = "fr"
     
-    public func code() -> String {
+    public var code: String {
         return self.rawValue
     }
     
+    public var name: String {
+        switch self {
+        case .es:
+            return "Español"
+        case .en:
+            return "English"
+        case .it:
+            return "Français"
+        case .fr:
+            return "Italiano"
+        }
+    }
+    
     public static func == (lhs: LanguageType, rhs: LanguageType) -> Bool {
-        lhs.code() == rhs.code()
+        lhs.code == rhs.code
     }
 }
