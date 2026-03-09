@@ -10,4 +10,5 @@ public protocol FHKProfileRepositoryProtocol: FHKInjectableProtocol {
     func deleteKeychain(key: String) throws
     func getEmailParent() throws -> String?
     func getLanguageCurrent() -> String
+    func setNewLanguage(lang: String)
 }
