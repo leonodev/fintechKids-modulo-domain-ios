@@ -9,6 +9,6 @@ public protocol FHKProfileRepositoryProtocol: FHKInjectableProtocol {
     func logout() async throws
     func deleteKeychain(key: String) throws
     func getEmailParent() throws -> String?
-    func getLanguageCurrent() -> String
+    func getLanguageCurrent() async -> String
     func setNewLanguage(lang: String)
 }
