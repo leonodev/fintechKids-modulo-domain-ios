@@ -24,9 +24,9 @@ public enum LanguageType: String, Sendable, Codable, Equatable {
         case .en:
             return "English"
         case .it:
-            return "Français"
-        case .fr:
             return "Italiano"
+        case .fr:
+            return "Français"
         }
     }
     
