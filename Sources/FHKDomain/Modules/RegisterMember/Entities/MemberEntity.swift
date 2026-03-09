@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct MemberEntity: Identifiable, Hashable, Equatable {
+public struct MemberEntity: Identifiable, Hashable, Equatable, Sendable {
     public let id: UUID
     public let emailParent: String
     public let memberName: String
