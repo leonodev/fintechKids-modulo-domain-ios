@@ -11,4 +11,5 @@ public protocol FHKProfileRepositoryProtocol: FHKInjectableProtocol {
     func getEmailParent() throws -> String?
     func getLanguageCurrent() async -> String
     func setNewLanguage(lang: String)
+    func getFamilyName() async -> String?
 }
