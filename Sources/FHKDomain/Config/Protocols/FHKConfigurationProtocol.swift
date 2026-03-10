@@ -9,6 +9,7 @@ import Foundation
 
 public protocol FHKConfigurationProtocol: FHKInjectableProtocol {
     var parentMail: String? { get set }
+    var familyName: String? { get set }
     func updateParentMail()
     
     var environmentType: EnvironmentType { get set }
