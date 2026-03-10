@@ -12,7 +12,7 @@ public protocol FHKAuthProtocol: FHKInjectableProtocol {
     func login(email: String, password: String) async throws -> FHKUserSession
     func logout() async throws
     func refreshSession() async throws -> FHKUserSession
-    func register(email: String, password: String) async throws -> FHKUserSession
+    func register(email: String, password: String, familyName: String) async throws -> FHKUserSession
     func setSession(accessToken: String) async throws
 
     // MARK: - User Data
