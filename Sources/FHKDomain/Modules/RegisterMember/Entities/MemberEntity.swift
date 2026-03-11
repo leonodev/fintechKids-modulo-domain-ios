@@ -8,7 +8,41 @@
 import Foundation
 import SwiftUI
 
-public struct MemberEntity: Identifiable, Hashable, Equatable, Sendable {
+public protocol MappeableToDomain: Sendable {
+    associatedtype ModelDomain
+    func toDomain() throws -> ModelDomain
+}
+
+extension Array: MappeableToDomain where Element: MappeableToDomain {
+    public typealias ModelDomain = [Element.ModelDomain]
+    
+    public func toDomain() throws -> ModelDomain {
+        try map { try $0.toDomain()}
+    }
+}
+
+public protocol MappeableToBusines: Sendable {
+    associatedtype ModelBusines
+    func toDto() throws -> ModelBusines
+}
+
+extension Array: MappeableToBusines where Element: MappeableToBusines {
+    public typealias ModelBusines = [Element.ModelBusines]
+    
+    public func toDto() throws -> ModelBusines {
+        try map { try $0.toDto()}
+    }
+}
+
+public protocol BusinessModelProtocol: Codable {
+   
+}
+
+public protocol DomainModelProtocol: Identifiable, Hashable, Equatable {
+    
+}
+
+public struct MemberEntity: DomainModelProtocol {
     public let id: UUID
     public let emailParent: String
     public let memberName: String
