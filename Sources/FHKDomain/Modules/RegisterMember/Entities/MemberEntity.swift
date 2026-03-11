@@ -21,26 +21,21 @@ extension Array: MappeableToDomain where Element: MappeableToDomain {
     }
 }
 
-public protocol MappeableToBusines {
-    associatedtype ModelBusines
-    func toDto() throws -> ModelBusines
-}
+//public protocol MappeableToBusiness {
+//    associatedtype ModelBusiness
+//    func toDto() throws -> ModelBusiness
+//}
+//
+//extension Array: MappeableToBusiness where Element: MappeableToBusiness {
+//    public typealias ModelBusiness = [Element.ModelBusiness]
+//    
+//    public func toDto() throws -> ModelBusiness {
+//        try map { try $0.toDto()}
+//    }
+//}
 
-extension Array: MappeableToBusines where Element: MappeableToBusines {
-    public typealias ModelBusines = [Element.ModelBusines]
-    
-    public func toDto() throws -> ModelBusines {
-        try map { try $0.toDto()}
-    }
-}
-
-public protocol BusinessModelProtocol: Codable, Sendable {
-   
-}
-
-public protocol DomainModelProtocol: Identifiable, Hashable, Equatable, Sendable {
-    
-}
+public protocol BusinessModelProtocol: Codable, Sendable {}
+public protocol DomainModelProtocol: Identifiable, Hashable, Equatable, Sendable {}
 
 public struct MemberEntity: DomainModelProtocol {
     public let id: UUID
