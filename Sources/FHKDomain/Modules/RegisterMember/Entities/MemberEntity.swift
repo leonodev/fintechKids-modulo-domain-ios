@@ -34,11 +34,11 @@ extension Array: MappeableToBusines where Element: MappeableToBusines {
     }
 }
 
-public protocol BusinessModelProtocol: Codable {
+public protocol BusinessModelProtocol: Codable, Sendable {
    
 }
 
-public protocol DomainModelProtocol: Identifiable, Hashable, Equatable {
+public protocol DomainModelProtocol: Identifiable, Hashable, Equatable, Sendable {
     
 }
 
