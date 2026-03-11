@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public protocol MappeableToDomain: Sendable {
+public protocol MappeableToDomain {
     associatedtype ModelDomain
     func toDomain() throws -> ModelDomain
 }
@@ -21,7 +21,7 @@ extension Array: MappeableToDomain where Element: MappeableToDomain {
     }
 }
 
-public protocol MappeableToBusines: Sendable {
+public protocol MappeableToBusines {
     associatedtype ModelBusines
     func toDto() throws -> ModelBusines
 }
