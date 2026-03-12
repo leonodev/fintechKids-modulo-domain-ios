@@ -8,21 +8,19 @@
 import Foundation
 
 public struct TaskEntity: DomainModelProtocol {
-    public let id: Int
+    public let id: UUID = UUID()
     public let createdAt: String
     public let name: String
     public let timeGranted: Int
     public let coinsGranted: Int
     public let emailParent: String
     
-    public init(id: Int,
-                createdAt: String,
+    public init(createdAt: String,
                 name: String,
                 timeGranted: Int,
                 coinsGranted: Int,
                 emailParent: String
     ) {
-        self.id = id
         self.createdAt = createdAt
         self.name = name
         self.timeGranted = timeGranted
