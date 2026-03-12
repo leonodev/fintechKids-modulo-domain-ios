@@ -7,5 +7,5 @@
 
 public protocol FHKTasksRepositoryProtocol: FHKInjectableProtocol {
     func createTask(task: TaskEntity) async throws
-    func getTasks() async throws -> [TaskEntity]
+    func getTasks(emailParent: String) async throws -> [TaskEntity]
 }
