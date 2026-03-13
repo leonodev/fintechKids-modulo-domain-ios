@@ -9,4 +9,5 @@
 public protocol FHKRemoteConfigManagerProtocol: FHKInjectableProtocol {
     var enabledLanguages: [String] { get }
     func fetchConfig() async throws
+    func getCachedTimeExpiration() async -> Int
 }
