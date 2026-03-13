@@ -15,13 +15,15 @@ public struct TaskEntity: DomainModelProtocol {
     public let timeGranted: Int
     public let coinsGranted: Int
     public let emailParent: String
+    public let durationType: String
     
     public init(createdAt: String,
                 name: String,
                 description: String,
                 timeGranted: Int,
                 coinsGranted: Int,
-                emailParent: String
+                emailParent: String,
+                durationType: String
     ) {
         self.createdAt = createdAt
         self.name = name
@@ -29,5 +31,6 @@ public struct TaskEntity: DomainModelProtocol {
         self.timeGranted = timeGranted
         self.coinsGranted = coinsGranted
         self.emailParent = emailParent
+        self.durationType = durationType
     }
 }
