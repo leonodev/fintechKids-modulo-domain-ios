@@ -12,14 +12,14 @@ public struct GoalEntity: DomainModelProtocol {
     public let expirationDate: String
     public let duration: String
     public let emailParent: String
-    public let coinsReward: String
+    public let coinsReward: Int
     public let timeReward: String
     public let status: String
     
     public init(expirationDate: String,
                 duration: String,
                 emailParent: String,
-                coinsReward: String,
+                coinsReward: Int,
                 timeReward: String,
                 status: String
     ) {
