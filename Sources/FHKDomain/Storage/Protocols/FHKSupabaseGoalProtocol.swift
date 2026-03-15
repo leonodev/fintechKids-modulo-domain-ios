@@ -6,6 +6,6 @@
 //
 
 public protocol FHKSupabaseGoalProtocol: FHKInjectableProtocol {
-    func createTask(goal: GoalEntity) async throws
-    func getTasks(emailParent: String) async throws -> [GoalEntity]
+    func createGoal(goal: GoalEntity) async throws
+    func getGoals(emailParent: String) async throws -> [GoalEntity]
 }
