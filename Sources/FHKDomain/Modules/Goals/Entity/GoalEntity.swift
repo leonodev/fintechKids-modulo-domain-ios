@@ -11,26 +11,23 @@ public struct GoalEntity: DomainModelProtocol {
     public let id: UUID = UUID()
     public let expirationDate: String
     public let name: String
-    public let duration: String
     public let emailParent: String
-    public let coinsReward: Int
-    public let timeReward: String
+    public let value: Int
+    public let measureType: String
     public let status: String
     
     public init(expirationDate: String,
                 name: String,
-                duration: String,
                 emailParent: String,
-                coinsReward: Int,
-                timeReward: String,
+                value: Int,
+                measureType: String,
                 status: String
     ) {
         self.expirationDate = expirationDate
         self.name = name
-        self.duration = duration
         self.emailParent = emailParent
-        self.coinsReward = coinsReward
-        self.timeReward = timeReward
+        self.value = value
+        self.measureType = measureType
         self.status = status
     }
 }
