@@ -5,7 +5,7 @@
 //  Created by Fredy Leon on 17/3/26.
 //
 
-public enum RewardType: String, Equatable, Sendable {
+public enum WorkType: String, Equatable, Sendable {
     case time = "time"
     case coins = "coins"
     
