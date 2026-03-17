@@ -14,14 +14,14 @@ public struct GoalEntity: DomainModelProtocol {
     public let emailParent: String
     public let value: Int
     public let measureType: String
-    public let status: String
+    public let status: OperationStatus
     
     public init(expirationDate: String,
                 name: String,
                 emailParent: String,
                 value: Int,
                 measureType: String,
-                status: String
+                status: OperationStatus
     ) {
         self.expirationDate = expirationDate
         self.name = name
