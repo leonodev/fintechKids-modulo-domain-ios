@@ -6,5 +6,13 @@
 //
 
 public enum DurationType: String, Equatable {
-    case hours, days, weeks, months
+    case hours = "hours"
+    case days = "days"
+    case weeks = "weeks"
+    case months = "months"
+    
+    public var value: String {
+        return self.rawValue
+    }
+     
 }
