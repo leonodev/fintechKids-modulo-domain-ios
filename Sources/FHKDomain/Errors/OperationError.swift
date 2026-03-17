@@ -6,8 +6,8 @@
 //
 
 public enum OperationError: Error {
-    case invalidData
-    case networkError(message: String)
-    case creationFailed
+    case invalidDate
+    case databaseError(String)
+    case networkError(String)
     case decodingError
 }
