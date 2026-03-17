@@ -10,4 +10,5 @@ public enum OperationError: Error {
     case databaseError(String)
     case networkError(String)
     case decodingError
+    case creationError
 }
