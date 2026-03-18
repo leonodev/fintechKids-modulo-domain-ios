@@ -18,7 +18,7 @@ public enum FHKSupabaseError: FHKError {
     
 
     // Only return the key localization
-    public var messageUI: String {
+    public var msnLocalizedKey: String {
         switch self {
         case .dateInvalid:
             return "spb_error_type_data_invalid"

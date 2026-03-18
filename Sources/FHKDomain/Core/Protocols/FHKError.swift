@@ -8,12 +8,7 @@
 import Foundation
 
 public protocol FHKError: Error, Equatable {
-    var titleUI: String { get }
-    var messageUI: String { get }
+    var msnLocalizedKey: String { get }
     var logMessage: String { get }
     var isShouldTrack: Bool { get }
-}
-
-public extension FHKError {
-    var titleUI: String { "" }
 }

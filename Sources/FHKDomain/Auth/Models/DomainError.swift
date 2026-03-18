@@ -53,11 +53,7 @@ public enum FHKDomainError: FHKError {
         }
     }
     
-    public var titleUI: String {
-        return ""
-    }
-    
-    public var messageUI: String {
+    public var msnLocalizedKey: String {
         return ""
     }
     
