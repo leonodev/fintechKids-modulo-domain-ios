@@ -32,7 +32,7 @@ public enum FHKSupabaseError: FHKError {
     public var msnLocalizedKey: String {
         switch self {
         case .emailAddressInvalid, .invalidCredentials, .userNotFound, .userAlreadyExist:
-            return "Invalid_credentials_error"
+            return "invalid_credentials_error"
             
         case .emailNotConfirmed:
             return "email_not_confirmed_error"
