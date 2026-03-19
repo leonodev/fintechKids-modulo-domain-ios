@@ -5,12 +5,12 @@
 //  Created by Fredy Leon on 19/3/26.
 //
 
-protocol SupabaseErrorProtocol {
+public protocol SupabaseErrorProtocol {
     func mapPostgresError(_ code: String, message: String) -> FHKSupabaseError
 }
 
 /// Codes API Doc: https://www.postgresql.org/docs/current/errcodes-appendix.html
-extension SupabaseErrorProtocol {
+public extension SupabaseErrorProtocol {
     
     func mapPostgresError(_ code: String, message: String) -> FHKSupabaseError {
         switch code {
