@@ -18,6 +18,7 @@ public enum FHKSupabaseError: FHKError {
     case otpExpired
     case tooManyRequests
     case userAlreadyExist
+    case accessToken
     
     // Errors PostgREST
     case dateInvalid          // Error 22007: Incorrect date format
@@ -51,7 +52,7 @@ public enum FHKSupabaseError: FHKError {
         case .networkError:
             return "spb_error_connection_network"
             
-        case .unknown:
+        case .unknown, .accessToken:
             return "spb_generic_error"
         }
     }
@@ -80,6 +81,9 @@ public enum FHKSupabaseError: FHKError {
         case .userAlreadyExist:
             return "The user already exist"
             
+        case .accessToken:
+            return "Domain: Access token is invalid or expired"
+            
         case .dateInvalid:
             return "Data sent in invalid format"
             
@@ -101,6 +105,7 @@ public enum FHKSupabaseError: FHKError {
         return true
     }
     
+    // Parser codes Auth
     public static func from(errorCode: String) -> FHKSupabaseError {
         switch errorCode {
             
