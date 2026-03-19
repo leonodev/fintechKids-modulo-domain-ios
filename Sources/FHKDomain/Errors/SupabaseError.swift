@@ -31,7 +31,11 @@ public enum FHKSupabaseError: FHKError {
     // Only return the key localization
     public var msnLocalizedKey: String {
         switch self {
-        case .emailAddressInvalid, .invalidCredentials, .userNotFound, .userAlreadyExist:
+          
+        case .emailAddressInvalid:
+            return "msn_register_user_error"
+            
+        case .invalidCredentials, .userNotFound, .userAlreadyExist:
             return "invalid_credentials_error"
             
         case .emailNotConfirmed:
