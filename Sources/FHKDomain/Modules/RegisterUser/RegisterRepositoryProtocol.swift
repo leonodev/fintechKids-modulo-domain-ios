@@ -6,6 +6,6 @@
 //
 
 public protocol RegisterRepositoryProtocol: FHKInjectableProtocol {
-    func register(email: String, password: String, familyName: String) async throws -> FHKUserSession
+    func register(registerEntity: RegisterUserEntity) async throws -> FHKUserSession
     func saveFamilyInfoKeychain(familyName: String) throws
 }
