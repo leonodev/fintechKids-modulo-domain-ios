@@ -10,6 +10,7 @@
 
 
 public enum FHKSupabaseError: FHKError {
+    
     // Errors Auth
     case emailAddressInvalid
     case invalidCredentials(context: String? = nil)
@@ -99,6 +100,50 @@ public enum FHKSupabaseError: FHKError {
             
         case .unknown(let message):
             return "Unknown error: \(message)"
+        }
+    }
+    
+    public var analyticsIdentifier: String? {
+        switch self {
+        case .emailAddressInvalid:
+            return "auth_email_format_invalid"
+                
+        case .invalidCredentials:
+            return "auth_login_failed_credentials"
+                
+        case .userNotFound:
+            return "auth_user_not_found"
+                
+        case .emailNotConfirmed:
+            return "auth_email_pending_confirmation"
+                
+        case .otpExpired:
+            return "auth_otp_code_expired"
+                
+        case .tooManyRequests:
+            return "auth_rate_limit_exceeded"
+                
+        case .userAlreadyExists:
+            return "auth_registration_user_exists"
+                
+        case .accessToken:
+            return "auth_token_refresh_failed"
+                
+        case .dateInvalid:
+            return "db_invalid_date_format"
+                
+        case .nameAlreadyExists:
+            return "db_unique_constraint_violation"
+                
+        case .missingRequiredField:
+            return "db_null_constraint_violation"
+                
+        case .networkError:
+            return "network_connection_lost"
+                
+        case .unknown(let message):
+            // Para el desconocido, enviamos el prefijo y un trozo del error real
+            return "unknown_error: \(message.prefix(70))"
         }
     }
     
