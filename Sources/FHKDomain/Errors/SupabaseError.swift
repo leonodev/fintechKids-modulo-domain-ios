@@ -17,7 +17,7 @@ public enum FHKSupabaseError: FHKError {
     case emailNotConfirmed
     case otpExpired
     case tooManyRequests
-    case userAlreadyExists
+    case userAlreadyExists(context: String? = nil)
     case accessToken
     
     // Errors PostgREST
@@ -79,8 +79,8 @@ public enum FHKSupabaseError: FHKError {
         case .tooManyRequests:
             return "Too many requests in a short period of time"
             
-        case .userAlreadyExists:
-            return "The user already exist"
+        case .userAlreadyExists(let context):
+            return "The user already exist. Attempt: \(context ?? "none")"
             
         case .accessToken:
             return "Domain: Access token is invalid or expired"
@@ -129,7 +129,7 @@ public enum FHKSupabaseError: FHKError {
             return .tooManyRequests
           
         case "user_already_exists":
-            return .userAlreadyExists
+            return .userAlreadyExists(context: nil)
             
         default:
             return .unknown(errorCode)
