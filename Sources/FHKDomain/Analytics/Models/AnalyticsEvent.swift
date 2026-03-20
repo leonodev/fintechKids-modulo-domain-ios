@@ -38,5 +38,10 @@ public enum AnalyticsEvent: Sendable {
             self.type = type
             self.message = message
         }
+        
+        public init(from fhkError: any FHKError) {
+            self.type = fhkError.analyticsIdentifier ?? "unknown_error"
+            self.message = fhkError.logMessage
+        }
     }
 }
