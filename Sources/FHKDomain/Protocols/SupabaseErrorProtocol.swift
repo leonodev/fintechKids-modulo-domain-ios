@@ -15,20 +15,20 @@ public extension FHKSupabaseErrorProtocol {
     func mapPostgresError(_ code: String, message: String) -> FHKSupabaseError {
         switch code {
         case "22007":
-            return .dateInvalid
+            return .dateInvalid(context: message)
             
         case "23505":
-            return .nameAlreadyExists
+            return .nameAlreadyExists(context: message)
             
         case "23502":
-            return .missingRequiredField
+            return .missingRequiredField(context: message)
             
         default:
             // We group by class prefix
             if code.hasPrefix("08") {
                 return .networkError
             }
-            return .unknown(message)
+            return .unknown("Code: \(code) - \(message)")
         }
     }
 }

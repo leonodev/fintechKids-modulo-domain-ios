@@ -12,7 +12,7 @@
 public enum FHKSupabaseError: FHKError {
     // Errors Auth
     case emailAddressInvalid
-    case invalidCredentials
+    case invalidCredentials(context: String? = nil)
     case userNotFound
     case emailNotConfirmed
     case otpExpired
@@ -21,9 +21,9 @@ public enum FHKSupabaseError: FHKError {
     case accessToken
     
     // Errors PostgREST
-    case dateInvalid          // Error 22007: Incorrect date format
-    case nameAlreadyExists    // Error 23505: A record with that name already exists.
-    case missingRequiredField // Error 23502: A required field is missing.
+    case dateInvalid(context: String? = nil)          // Error 22007: Incorrect date format
+    case nameAlreadyExists(context: String? = nil)    // Error 23505: A record with that name already exists.
+    case missingRequiredField(context: String? = nil) // Error 23502: A required field is missing.
     case networkError         // Anywhere Clase 08: Connection failure or timeout
     case unknown(String)      // For any other unmapped errors
     
@@ -64,8 +64,8 @@ public enum FHKSupabaseError: FHKError {
         case .emailAddressInvalid:
             return "the email address is invalid"
             
-        case .invalidCredentials:
-            return "Invalid credentials provided by the user"
+        case .invalidCredentials(let context):
+            return "Invalid credentials provided. Attempt: \(context ?? "none")"
             
         case .userNotFound:
             return "User not found in the system"
@@ -85,20 +85,20 @@ public enum FHKSupabaseError: FHKError {
         case .accessToken:
             return "Domain: Access token is invalid or expired"
             
-        case .dateInvalid:
-            return "Data sent in invalid format"
+        case .dateInvalid(let context):
+            return "Data sent in invalid format. Context: \(context ?? "none")"
             
-        case .nameAlreadyExists:
-            return "Data sent in invalid format"
+        case .nameAlreadyExists(let context):
+            return "A record with that name already exists. Data: \(context ?? "none")"
             
-        case .missingRequiredField:
-            return "A required piece of information has not been sent"
+        case .missingRequiredField(let field):
+            return "Missing required field: \(field ?? "unknown")"
             
         case .networkError:
             return "Network error with supabase"
             
-        case .unknown:
-            return "unknown error"
+        case .unknown(let message):
+            return "Unknown error: \(message)"
         }
     }
     
@@ -114,7 +114,7 @@ public enum FHKSupabaseError: FHKError {
             return .emailAddressInvalid
                 
         case "invalid_credentials":
-            return .invalidCredentials
+            return .invalidCredentials(context: nil)
             
         case "user_not_found":
             return .userNotFound
