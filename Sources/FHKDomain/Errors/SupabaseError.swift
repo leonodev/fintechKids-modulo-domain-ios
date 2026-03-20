@@ -17,7 +17,7 @@ public enum FHKSupabaseError: FHKError {
     case emailNotConfirmed
     case otpExpired
     case tooManyRequests
-    case userAlreadyExist
+    case userAlreadyExists
     case accessToken
     
     // Errors PostgREST
@@ -32,10 +32,10 @@ public enum FHKSupabaseError: FHKError {
     public var msnLocalizedKey: String {
         switch self {
           
-        case .emailAddressInvalid:
+        case .emailAddressInvalid, .nameAlreadyExists:
             return "msn_register_user_error"
             
-        case .invalidCredentials, .userNotFound, .userAlreadyExist:
+        case .invalidCredentials, .userNotFound, .userAlreadyExists:
             return "invalid_credentials_error"
             
         case .emailNotConfirmed:
@@ -44,20 +44,17 @@ public enum FHKSupabaseError: FHKError {
         case .otpExpired:
             return "msm_otp_expired_error"
             
-        case .tooManyRequests, .dateInvalid:
-            return "spb_error_type_data_invalid"
-            
-        case .nameAlreadyExists:
-            return "spb_error_register_duplicated"
-            
-        case .missingRequiredField:
-            return "spb_error_data_required"
+        case .dateInvalid:
+            return "msn_type_data_invalid_error"
             
         case .networkError:
-            return "spb_error_connection_network"
+            return "msn_connection_network_error"
             
-        case .unknown, .accessToken:
-            return "spb_generic_error"
+        case .tooManyRequests:
+            return "msn_too_many_requests_error"
+            
+        case .unknown, .accessToken, .missingRequiredField:
+            return "msn_generic_error"
         }
     }
     
@@ -82,7 +79,7 @@ public enum FHKSupabaseError: FHKError {
         case .tooManyRequests:
             return "Too many requests in a short period of time"
             
-        case .userAlreadyExist:
+        case .userAlreadyExists:
             return "The user already exist"
             
         case .accessToken:
@@ -132,7 +129,7 @@ public enum FHKSupabaseError: FHKError {
             return .tooManyRequests
           
         case "user_already_exists":
-            return .userAlreadyExist
+            return .userAlreadyExists
             
         default:
             return .unknown(errorCode)
