@@ -6,8 +6,8 @@
 //
 
 public struct LoginEntity {
-    let email: String
-    let password: String
+    public let email: String
+    public let password: String
 
     public init(email: String, password: String) {
         self.email = email

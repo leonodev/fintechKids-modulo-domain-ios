@@ -6,9 +6,9 @@
 //
 
 public struct RegisterUserEntity {
-    let email: String
-    let password: String
-    let familyName: String
+    public let email: String
+    public let password: String
+    public let familyName: String
 
     public init(email: String, password: String, familyName: String) {
         self.email = email
