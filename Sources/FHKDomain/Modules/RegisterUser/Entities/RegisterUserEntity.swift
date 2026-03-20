@@ -5,7 +5,7 @@
 //  Created by Fredy Leon on 20/3/26.
 //
 
-public struct RegisterUserEntity {
+public struct RegisterUserEntity: Encodable {
     public let email: String
     public let password: String
     public let familyName: String

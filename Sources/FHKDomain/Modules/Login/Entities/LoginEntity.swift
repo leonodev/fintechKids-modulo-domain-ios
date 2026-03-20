@@ -5,7 +5,7 @@
 //  Created by Fredy Leon on 20/3/26.
 //
 
-public struct LoginEntity {
+public struct LoginEntity: Encodable {
     public let email: String
     public let password: String
 
