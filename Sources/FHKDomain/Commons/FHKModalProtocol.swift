@@ -10,6 +10,6 @@ import SwiftUI
 public protocol FHKModalProtocol: AnyObject, Sendable {
     var isPresented: Bool { get set }
     var content: AnyView? { get set }
-    func show<V: View>(onDismiss: (() -> Void)?, @ViewBuilder _ content: () -> V)
+    func show<V: View>(@ViewBuilder _ content: () -> V)
     func dismiss()
 }
