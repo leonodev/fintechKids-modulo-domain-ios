@@ -9,20 +9,20 @@ import Foundation
 
 public struct RewardEntity: DomainModelProtocol {
     public let id: UUID = UUID()
-    public let expirationDate: String
+    public let createdAt: String
     public let name: String
     public let timeRequiered: String
     public let coinsRequiered: Int
     public let emailParent: String
     
     public init(
-        expirationDate: String,
+        createdAt: String,
         name: String,
         timeRequiered: String,
         coinsRequiered: Int,
         emailParent: String
     ) {
-        self.expirationDate = expirationDate
+        self.createdAt = createdAt
         self.name = name
         self.timeRequiered = timeRequiered
         self.coinsRequiered = coinsRequiered
