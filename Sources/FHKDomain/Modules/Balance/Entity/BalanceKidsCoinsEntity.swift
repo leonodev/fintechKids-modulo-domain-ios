@@ -1,5 +1,5 @@
 //
-//  BalanceEntity.swift
+//  BalanceKidsCoinsEntity.swift
 //  FHKDomain
 //
 //  Created by Fredy Leon on 17/4/26.
@@ -7,18 +7,15 @@
 
 import Foundation
 
-public struct BalanceEntity: DomainModelProtocol {
+public struct BalanceKidsCoinsEntity: DomainModelProtocol {
     public let id: UUID = UUID()
     public let memberId: UUID
     public let coinsObtained: Int
-    public let timeObtained: String
     
     public init(memberId: UUID,
-                coinsObtained: Int,
-                timeObtained: String
+                coinsObtained: Int
     ) {
         self.memberId = memberId
         self.coinsObtained = coinsObtained
-        self.timeObtained = timeObtained
     }
 }
