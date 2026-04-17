@@ -9,5 +9,6 @@ import Foundation
 
 public protocol FHKSupabaseBalanceProtocol: FHKInjectableProtocol {
     func fetchBalance(memberId: UUID) async throws -> BalanceEntity
-    func updateBalance(memberId: UUID, infoBalance: BalanceEntity) async throws
+    func updateKidsCoinsBalance(memberId: UUID, infoBalance: BalanceKidsCoinsEntity) async throws
+    func updateTimeBalance(memberId: UUID, infoBalance: BalanceTimeEntity) async throws
 }
