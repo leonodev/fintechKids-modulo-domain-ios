@@ -23,6 +23,9 @@ public extension FHKSupabaseErrorProtocol {
         case "23502":
             return .missingRequiredField(context: message)
             
+        case "42P01":
+            return .tableNameUnknown(context: message)
+            
         default:
             // We group by class prefix
             if code.hasPrefix("08") {

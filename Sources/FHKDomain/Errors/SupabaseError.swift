@@ -25,6 +25,7 @@ public enum FHKSupabaseError: FHKError {
     case dateInvalid(context: String? = nil)          // Error 22007: Incorrect date format
     case nameAlreadyExists(context: String? = nil)    // Error 23505: A record with that name already exists.
     case missingRequiredField(context: String? = nil) // Error 23502: A required field is missing.
+    case tableNameUnknown(context: String? = nil)     // Error 42P01: relation "members_table" does not exist.
     case networkError         // Anywhere Clase 08: Connection failure or timeout
     case unknown(String)      // For any other unmapped errors
     
@@ -56,6 +57,9 @@ public enum FHKSupabaseError: FHKError {
             
         case .unknown, .accessToken, .missingRequiredField:
             return "msn_generic_error"
+            
+        case .tableNameUnknown:
+            return "msn_update_balance_fail"
         }
     }
     
@@ -97,6 +101,9 @@ public enum FHKSupabaseError: FHKError {
             
         case .networkError:
             return "Network error with supabase"
+            
+        case .tableNameUnknown(let message):
+            return "Error: \(message ?? "table unknown")"
             
         case .unknown(let message):
             return "Unknown error: \(message)"
@@ -140,6 +147,9 @@ public enum FHKSupabaseError: FHKError {
                 
         case .networkError:
             return "network_connection_lost"
+            
+        case .tableNameUnknown:
+            return "db_table_name_unknown"
                 
         case .unknown(let message):
             // Para el desconocido, enviamos el prefijo y un trozo del error real
