@@ -15,5 +15,5 @@ public struct GoldenTicketParamsEntity: Encodable {
 }
 
 public struct ResendResponse: Decodable {
-    let id: String?
+    public let id: String?
 }
