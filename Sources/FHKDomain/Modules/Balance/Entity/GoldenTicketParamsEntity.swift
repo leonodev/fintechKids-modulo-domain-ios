@@ -10,16 +10,22 @@ public struct GoldenTicketParamsEntity: Encodable, Equatable, Sendable {
     let taskDescription: String
     let reward: String
     let emailTo: String
+    let memberId: String
+    let claimedValue: String
     
     public init(recipientName: String,
                 taskDescription: String,
                 reward: String,
-                emailTo: String
+                emailTo: String,
+                memberId: String,
+                claimedValue: String
     ) {
         self.recipientName = recipientName
         self.taskDescription = taskDescription
         self.reward = reward
         self.emailTo = emailTo
+        self.memberId = memberId
+        self.claimedValue = claimedValue
     }
 }
 
