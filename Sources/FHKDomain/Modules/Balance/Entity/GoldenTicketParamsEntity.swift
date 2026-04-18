@@ -12,6 +12,21 @@ public struct GoldenTicketParamsEntity: Encodable {
     let validUntil: String
     let ticketCode: String
     let emailTo: String
+    
+    public init(recipientName: String,
+                taskDescription: String,
+                reward: String, validUntil:
+                String,
+                ticketCode: String,
+                emailTo: String
+    ) {
+        self.recipientName = recipientName
+        self.taskDescription = taskDescription
+        self.reward = reward
+        self.validUntil = validUntil
+        self.ticketCode = ticketCode
+        self.emailTo = emailTo
+    }
 }
 
 public struct ResendResponse: Decodable {
