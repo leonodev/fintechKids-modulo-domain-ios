@@ -5,7 +5,7 @@
 //  Created by Fredy Leon on 18/4/26.
 //
 
-public struct GoldenTicketParamsEntity: Encodable {
+public struct GoldenTicketParamsEntity: Encodable, Sendable {
     let recipientName: String
     let taskDescription: String
     let reward: String
