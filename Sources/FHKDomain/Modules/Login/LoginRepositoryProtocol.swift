@@ -6,7 +6,7 @@
 //
 
 public protocol FHKLoginRepositoryProtocol: FHKInjectableProtocol {
-    func login(loginEntity: LoginEntity) async throws -> String?
+    func login(loginEntity: LoginEntity) async throws -> FHKUserSession?
     func loginWithBiometrics(prompt: String) async throws
     func saveAuthToken(_ token: String, requiresBiometry: Bool) throws
     func saveUserIntoKeychain(email: String) async throws
