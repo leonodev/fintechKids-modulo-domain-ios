@@ -10,6 +10,7 @@ import Foundation
 public protocol FHKConfigurationProtocol: FHKInjectableProtocol {
     var parentMail: String? { get set }
     var familyName: String? { get set }
+    var approvePin: String? { get }
     func refreshParentMail()
     func refreshFamilyName()
     
