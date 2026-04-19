@@ -10,6 +10,7 @@ public protocol FHKLoginRepositoryProtocol: FHKInjectableProtocol {
     func loginWithBiometrics(prompt: String) async throws
     func saveAuthToken(_ token: String, requiresBiometry: Bool) throws
     func saveUserIntoKeychain(email: String) async throws
+    func savePinApproveTask(pin: String) async throws
     
     func refreshParentMail()
     var hasSavedToken: Bool { get }
