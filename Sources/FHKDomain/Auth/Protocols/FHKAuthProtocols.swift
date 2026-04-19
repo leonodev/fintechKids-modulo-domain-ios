@@ -11,7 +11,7 @@ public protocol FHKAuthProtocol: FHKInjectableProtocol {
     // Usamos nuestro modelo propio: FHKUserSession
     func login(loginEntity: LoginEntity) async throws -> FHKUserSession
     func logout() async throws
-    func refreshSession() async throws -> FHKUserSession
+    func refreshSession(emailParent: String) async throws -> FHKUserSession
     func register(registerEntity: RegisterUserEntity) async throws -> FHKUserSession
     func setSession(accessToken: String) async throws
 
