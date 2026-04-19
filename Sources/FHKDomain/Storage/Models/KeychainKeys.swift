@@ -12,6 +12,7 @@ public struct KeychainKeys {
 public extension KeychainKeys {
     static let userKey = "user_key"
     static let familyNameKey = "family_name"
+    static let approvePinKey = "approve_pin"
 }
 
 public enum KeychainKey: String, CaseIterable, Sendable {
