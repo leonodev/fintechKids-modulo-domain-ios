@@ -12,12 +12,12 @@ public struct GoldenTicketEntity: DomainModelProtocol {
     public let recipientName: String
     public let taskDescription: String
     public let reward: String
-    public let ticketCode: Int
+    public let ticketCode: String
     
     public init(recipientName: String,
          taskDescription: String,
          reward: String,
-         ticketCode: Int
+         ticketCode: String
     ) {
         self.recipientName = recipientName
         self.taskDescription = taskDescription
