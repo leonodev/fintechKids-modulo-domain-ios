@@ -1,5 +1,5 @@
 //
-//  RewardMemberEntity.swift
+//  RewardCollectedEntity.swift
 //  FHKDomain
 //
 //  Created by Fredy Leon on 21/4/26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RewardMemberEntity: DomainModelProtocol {
+public struct RewardCollectedEntity: DomainModelProtocol {
     public let id: UUID = UUID()
     public let createdDate: String
     public let member: MemberEntity
