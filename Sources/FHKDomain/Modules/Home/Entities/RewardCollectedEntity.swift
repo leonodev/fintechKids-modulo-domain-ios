@@ -15,6 +15,8 @@ public struct RewardCollectedEntity: DomainModelProtocol {
     public let nameReward: String
     public let claimedValue: String
     public let state: String
+    public let nameTask: String
+   
     
     public init(id: Int,
                 createdDate: String,
@@ -22,7 +24,8 @@ public struct RewardCollectedEntity: DomainModelProtocol {
                 parentEmail: String,
                 nameReward: String,
                 claimedValue: String,
-                state: String
+                state: String,
+                nameTask: String
     ) {
         self.id = id
         self.createdDate = createdDate
@@ -31,5 +34,6 @@ public struct RewardCollectedEntity: DomainModelProtocol {
         self.nameReward = nameReward
         self.claimedValue = claimedValue
         self.state = state
+        self.nameTask = nameTask
     }
 }
