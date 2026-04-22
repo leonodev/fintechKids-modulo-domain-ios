@@ -8,7 +8,7 @@
 import Foundation
 
 public struct RewardCollectedEntity: DomainModelProtocol {
-    public let id: UUID = UUID()
+    public let id: Int
     public let createdDate: String
     public let member: MemberEntity
     public let parentEmail: String
@@ -16,13 +16,15 @@ public struct RewardCollectedEntity: DomainModelProtocol {
     public let claimedValue: String
     public let state: String
     
-    public init(createdDate: String,
+    public init(id: Int,
+                createdDate: String,
                 member: MemberEntity,
                 parentEmail: String,
                 nameReward: String,
                 claimedValue: String,
                 state: String
     ) {
+        self.id = id
         self.createdDate = createdDate
         self.member = member
         self.parentEmail = parentEmail
