@@ -8,5 +8,5 @@
 public protocol FHKSupabaseRewardsProtocol: FHKInjectableProtocol {
     func createReward(reward: RewardEntity) async throws
     func fetchRewards(emailParent: String) async throws -> [RewardEntity]
-    func fetchRewardCollected(memberID: String, parentEmail: String) async throws -> [RewardCollectedEntity]
+    func fetchRewardCollected(parentEmail: String) async throws -> [RewardCollectedEntity]
 }
