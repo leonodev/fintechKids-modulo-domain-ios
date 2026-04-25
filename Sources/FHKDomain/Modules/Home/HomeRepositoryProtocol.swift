@@ -8,5 +8,5 @@
 public protocol FHKHomeRepositoryProtocol: FHKInjectableProtocol {
     func fetchMembers(email: String, forceRefresh: Bool) async throws -> [MemberEntity]
     func fetchRewardCollected(parentEmail: String, forceRefresh: Bool) async throws -> [RewardCollectedEntity]
-    func getParentMail() -> String?
+    func getParentMail() async -> String?
 }
