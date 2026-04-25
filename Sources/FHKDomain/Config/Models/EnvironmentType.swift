@@ -8,5 +8,5 @@
 public enum EnvironmentType: String, Sendable {
     case production = "Production"
     case develop = "Develop"
-    case localHost = "LocalHost"
+    case localhost = "Localhost"
 }
