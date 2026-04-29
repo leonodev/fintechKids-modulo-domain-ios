@@ -18,7 +18,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
     
     public init(goalId: Int,
                 memberId: UUID,
-                accumulatedValue: Int,
+                accumulatedValue: Int = 0,
                 taskWinnedValue: Int = 0,
                 rewardsSystemType: String,
                 rewardsSystemValue: Int,
