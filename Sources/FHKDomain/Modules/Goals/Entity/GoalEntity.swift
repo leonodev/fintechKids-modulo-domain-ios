@@ -8,7 +8,7 @@
 import Foundation
 
 public struct GoalEntity: DomainModelProtocol {
-    public let id: UUID = UUID()
+    public let id: Int?
     public let expirationDate: String
     public let name: String
     public let emailParent: String
@@ -16,13 +16,15 @@ public struct GoalEntity: DomainModelProtocol {
     public let measureType: String
     public let status: OperationStatus
     
-    public init(expirationDate: String,
+    public init(id: Int? = nil,
+                expirationDate: String,
                 name: String,
                 emailParent: String,
                 value: Int,
                 measureType: String,
                 status: OperationStatus
     ) {
+        self.id = id
         self.expirationDate = expirationDate
         self.name = name
         self.emailParent = emailParent
