@@ -20,7 +20,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
                 memberId: UUID,
                 rewardsSystemValue: Int,
                 accumulatedValue: Int,
-                taskWinnedValue: Int,
+                taskWinnedValue: Int = 0,
                 rewardsSystemType: String
     ) {
         self.goalId = goalId
