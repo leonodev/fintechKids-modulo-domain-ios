@@ -12,9 +12,9 @@ public enum ReceiveFormType {
 }
 
 public struct CollectRewardEntity: Equatable, Hashable {
-    let task: TaskEntity
-    let receiveRewardType: ReceiveFormType
-    let rewardType: WorkType
+    public let task: TaskEntity
+    public let receiveRewardType: ReceiveFormType
+    public let rewardType: WorkType
     
     public init(task: TaskEntity,
                 receiveRewardType:
