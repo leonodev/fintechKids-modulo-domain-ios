@@ -10,16 +10,16 @@ import Foundation
 public struct BalanceRemainingEntity {
     public let memberId: UUID
     public let collectReward: CollectRewardEntity
-    public let coinsObtained: Int
+    public let goal: GoalEntity
     
     public init(
         memberId: UUID,
         collectReward: CollectRewardEntity,
-        coinsObtained: Int
+        goal: GoalEntity
     ) {
         self.memberId = memberId
         self.collectReward = collectReward
-        self.coinsObtained = coinsObtained
+        self.goal = goal
     }
 }
 
