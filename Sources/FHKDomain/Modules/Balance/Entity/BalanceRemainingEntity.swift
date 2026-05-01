@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct BalanceRemainingEntity {
+public struct BalanceRemainingEntity: Equatable {
     public let memberId: UUID
     public let collectReward: CollectRewardEntity
     public let goal: GoalEntity
