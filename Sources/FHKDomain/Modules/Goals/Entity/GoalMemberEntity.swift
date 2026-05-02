@@ -15,6 +15,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
     public let taskWinnedValue: Int
     public let rewardsSystemType: String
     public let rewardsSystemValue: Int
+    public let parentEmail: String
     
     public init(goalId: Int,
                 memberId: UUID,
@@ -22,6 +23,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
                 taskWinnedValue: Int = 0,
                 rewardsSystemType: String,
                 rewardsSystemValue: Int,
+                parentEmail: String
     ) {
         self.goalId = goalId
         self.memberId = memberId
@@ -29,5 +31,6 @@ public struct GoalMemberEntity: DomainModelProtocol {
         self.taskWinnedValue = taskWinnedValue
         self.rewardsSystemType = rewardsSystemType
         self.rewardsSystemValue = rewardsSystemValue
+        self.parentEmail = parentEmail
     }
 }
