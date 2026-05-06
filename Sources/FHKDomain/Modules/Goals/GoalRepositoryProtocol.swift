@@ -12,5 +12,6 @@ public protocol FHKGoalRepositoryProtocol: FHKInjectableProtocol {
     func getGoals(emailParent: String, forceRefresh: Bool) async throws -> [GoalEntity]
     func createGoalMember(goal: GoalMemberEntity) async throws
     func fetchGoalMember(memberId: UUID, forceRefresh: Bool) async throws -> [GoalMemberEntity]
+    func fetchGoalMemberFamily(emailParent: String, forceRefresh: Bool) async throws -> [GoalMemberEntity]
     func clearCache() async
 }
