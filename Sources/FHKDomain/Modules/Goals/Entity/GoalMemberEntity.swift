@@ -10,6 +10,7 @@ import Foundation
 public struct GoalMemberEntity: DomainModelProtocol {
     public let id: UUID = UUID()
     public let goalId: Int
+    public let nameGoal: String
     public let memberId: UUID
     public let accumulatedValue: Int
     public let taskWinnedValue: Int
@@ -19,6 +20,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
     
     public init(goalId: Int,
                 memberId: UUID,
+                nameGoal: String,
                 accumulatedValue: Int = 0,
                 taskWinnedValue: Int = 0,
                 rewardsSystemType: String,
@@ -27,6 +29,7 @@ public struct GoalMemberEntity: DomainModelProtocol {
     ) {
         self.goalId = goalId
         self.memberId = memberId
+        self.nameGoal = nameGoal
         self.accumulatedValue = accumulatedValue
         self.taskWinnedValue = taskWinnedValue
         self.rewardsSystemType = rewardsSystemType
