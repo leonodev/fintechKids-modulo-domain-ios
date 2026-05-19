@@ -25,6 +25,7 @@ public protocol FHKStorageManagerProtocol: Sendable {
     func clearAllKeychain() throws
     func isBiometryAvailable() -> Bool
     func exists(key: String) -> Bool
+    func clearKeychainIfNewInstallation() async
 }
 
 // Setting default require biometry
