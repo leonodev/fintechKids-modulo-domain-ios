@@ -8,7 +8,7 @@
 import Foundation
 
 public struct RewardEntity: DomainModelProtocol {
-    public let id: UUID = UUID()
+    public let id: Int?
     public let createdAt: String
     public let name: String
     public let timeRequiered: String
@@ -16,12 +16,14 @@ public struct RewardEntity: DomainModelProtocol {
     public let emailParent: String
     
     public init(
+        id: Int? = nil,
         createdAt: String,
         name: String,
         timeRequiered: String,
         coinsRequiered: Int,
         emailParent: String
     ) {
+        self.id = id
         self.createdAt = createdAt
         self.name = name
         self.timeRequiered = timeRequiered
