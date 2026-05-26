@@ -13,6 +13,13 @@ public struct LanguageModel: Codable {
     let en: Bool
     let it: Bool
     
+    public init(es: Bool = true, fr: Bool = false, en: Bool = false, it: Bool = false) {
+        self.es = es
+        self.fr = fr
+        self.en = en
+        self.it = it
+    }
+    
     public var enabledCodes: [String] {
         var codes: [String] = []
         if es { codes.append(LanguageType.es.code) }
