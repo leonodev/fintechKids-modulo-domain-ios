@@ -5,7 +5,7 @@
 //  Created by fleon  on 26/5/26.
 //
 
-public struct MenuHomeItem {
+public struct MenuHomeItem: Decodable {
     public let id: Int
     public let name: String
     public let icon: String
