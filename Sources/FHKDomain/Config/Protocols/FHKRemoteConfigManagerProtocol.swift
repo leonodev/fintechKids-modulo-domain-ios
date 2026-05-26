@@ -8,7 +8,7 @@
 @MainActor
 public protocol FHKRemoteConfigManagerProtocol: FHKInjectableProtocol {
     var enabledLanguages: [String] { get }
-    var menuOptiosHome: FirebaseMenuBottomHome { get }
+    var menuOptiosHome: MenuHomeItem { get }
     func fetchConfig() async throws
     func getCachedTimeExpiration() async -> Int
 }

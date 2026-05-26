@@ -1,15 +1,11 @@
 //
-//  FirebaseMenu.swift
+//  MenuHomeItem.swift
 //  FHKDomain
 //
 //  Created by fleon  on 26/5/26.
 //
 
-public struct FirebaseMenuBottomHome {
-    public let bottom_bar_menus: [FirebaseMenuItem]
-}
-
-public struct FirebaseMenuItem {
+public struct MenuHomeItem {
     public let id: Int
     public let name: String
     public let icon: String
