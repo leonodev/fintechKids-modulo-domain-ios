@@ -12,7 +12,7 @@ public enum ToastType {
     case notification
 }
 
-public class FHKToastInfo {
+public class FHKToastInfo: Equatable {
     public var type: ToastType
     public var message: String
     public var hasIcon: Bool
@@ -21,5 +21,9 @@ public class FHKToastInfo {
         self.type = type
         self.message = message
         self.hasIcon = hasIcon
+    }
+    
+    public static func == (lhs: FHKToastInfo, rhs: FHKToastInfo) -> Bool {
+        return lhs.type == rhs.type && lhs.message == rhs.message && lhs.hasIcon == rhs.hasIcon
     }
 }
