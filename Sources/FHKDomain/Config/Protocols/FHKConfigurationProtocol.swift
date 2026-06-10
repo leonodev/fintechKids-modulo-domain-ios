@@ -11,7 +11,6 @@ public protocol FHKConfigurationProtocol: FHKInjectableProtocol {
     var parentMail: String? { get set }
     var familyName: String? { get set }
     var approvePin: String? { get }
-    var isUserAuthenticated: Bool { get set }
     func refreshParentMail()
     func refreshFamilyName()
     
