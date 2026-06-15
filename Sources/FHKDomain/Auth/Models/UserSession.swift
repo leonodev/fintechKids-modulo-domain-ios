@@ -32,4 +32,9 @@ public struct FHKUserSession: Sendable {
 public struct InfoAditional: Sendable {
     public let pinApproved: String
     public let familyName: String
+    
+    public init(pinApproved: String, familyName: String) {
+        self.pinApproved = pinApproved
+        self.familyName = familyName
+    }
 }
