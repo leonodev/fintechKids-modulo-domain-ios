@@ -8,7 +8,6 @@ public struct FHKUserSession: Sendable {
     public let refreshToken: String?
     public let expiresAt: Date?
     public let pinApproved: String
-    public let familyName: String
     
     public var hasActiveSession: Bool {
         return accessToken != nil
@@ -19,8 +18,7 @@ public struct FHKUserSession: Sendable {
                 accessToken: String? = nil,
                 refreshToken: String? = nil,
                 expiresAt: Date? = nil,
-                pinApproved: String,
-                familyName: String
+                pinApproved: String
     ) {
         self.id = id
         self.email = email
@@ -28,6 +26,5 @@ public struct FHKUserSession: Sendable {
         self.refreshToken = refreshToken
         self.expiresAt = expiresAt
         self.pinApproved = pinApproved
-        self.familyName = familyName
     }
 }
