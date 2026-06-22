@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public protocol FHKLanguageManagerProtocol: FHKInjectableProtocol {
     var selectedLanguage: String { get set }
     var currentBundle: Bundle { get }
