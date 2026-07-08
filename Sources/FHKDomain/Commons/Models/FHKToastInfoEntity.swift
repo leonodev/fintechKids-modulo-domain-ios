@@ -5,14 +5,14 @@
 //  Created by Fredy Leon on 7/3/26.
 //
 
-public enum ToastType {
+public enum ToastType: Sendable {
     case success
     case error
     case warning
     case notification
 }
 
-public class FHKToastInfo: Equatable {
+public struct FHKToastInfo: Equatable, Sendable {
     public var type: ToastType
     public var message: String
     public var hasIcon: Bool
@@ -21,9 +21,5 @@ public class FHKToastInfo: Equatable {
         self.type = type
         self.message = message
         self.hasIcon = hasIcon
-    }
-    
-    public static func == (lhs: FHKToastInfo, rhs: FHKToastInfo) -> Bool {
-        return lhs.type == rhs.type && lhs.message == rhs.message && lhs.hasIcon == rhs.hasIcon
     }
 }
