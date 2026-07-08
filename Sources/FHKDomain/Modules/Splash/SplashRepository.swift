@@ -28,13 +28,3 @@ public extension FHKSplashRepository {
         return repository
     }
 }
-
-/*
- 
- 1. Boilerplate masivo: Por cada servicio tenías que crear el protocolo, la clase real, el mock para tests y el stub para previews (4 archivos).
- 
- 2. Barreras de módulos: Lo que te pasaba a ti; el código de producción no podía ver los mocks del target de pruebas.
- 
- 3. Peleas con Swift 6: El uso de any Protocolo (existenciales) tiene penalizaciones de rendimiento y micro-problemas de compatibilidad con genéricos y concurrencia (como el error de tipos que te explotó al principio).
- 
- */
