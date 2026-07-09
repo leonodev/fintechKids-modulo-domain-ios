@@ -16,7 +16,7 @@ public enum BiometryType {
 public struct FHKSecurity: Sendable {
     public var getBiometryType: @Sendable () -> BiometryType = { .none }
     public var getAnonKey: @Sendable () throws -> String = { "" }
-    public var biometryIcon: @Sendable () throws -> String = { "" }
+    public var biometryIcon: @Sendable () -> String = { "" }
     
     public init() {}
 }
