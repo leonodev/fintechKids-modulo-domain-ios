@@ -13,8 +13,10 @@ public enum BiometryType {
     case none
 }
 
-struct FHKSecurity: Sendable {
+public struct FHKSecurity: Sendable {
     public var getBiometryType: @Sendable () -> BiometryType = { .none }
     public var getAnonKey: @Sendable () throws -> String = { "" }
     public var biometryIcon: @Sendable () throws -> String = { "" }
+    
+    public init() {}
 }
