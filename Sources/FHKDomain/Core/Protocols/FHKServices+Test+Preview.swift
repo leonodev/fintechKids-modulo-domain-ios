@@ -1,17 +1,11 @@
 //
-//  CoreProtocols.swift
+//  FHKServices+Test+Preview.swift
 //  FHKDomain
 //
 //  Created by Fredy Leon on 25/2/26.
 //
 
 import Foundation
-
-//public protocol FHKServicesAPIProtocol: FHKInjectableProtocol {
-//    func getURL(environment: EnvironmentType,
-//                country: Countries,
-//                serviceKey: ServiceType) throws -> String
-//}
 
 public struct FHKServices: Sendable {
     public var getURL: @Sendable (EnvironmentType,
