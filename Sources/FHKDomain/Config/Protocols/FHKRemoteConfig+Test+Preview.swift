@@ -30,4 +30,25 @@ public extension FHKRemoteConfig {
     static var test: Self {
         Self()
     }
+    
+    static var preview: Self {
+        var config = Self()
+        
+        config.enabledLanguages = { ["en", "es"] }
+        
+        config.menuHomeItems = { [
+            MenuHomeItem(id: 1,
+                         name: "payments",
+                         icon: "payments-icon",
+                         label_localized_key: "key_payments_title",
+                         active: true)
+            ]
+        }
+        
+        config.fetchConfig = {}
+        
+        config.getCachedTimeExpiration = { 1 /* Minutes */  }
+        
+        return config
+    }
 }
