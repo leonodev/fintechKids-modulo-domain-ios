@@ -19,11 +19,11 @@ public protocol FHKModalProtocol: AnyObject, Sendable {
 
 @MainActor
 public struct FHKModal: Sendable {
-    public var isPresented: @Sendable () -> Bool = { false }
-    public var content: @Sendable () -> AnyView? = { nil }
-    public var config: @Sendable () -> FHKPopupConfig? = { nil }
-    public var showContent: @Sendable ((@Sendable () -> Void)?, AnyView, FHKPopupConfig?) -> Void = { _, _, _ in }
-    public var dismiss: @Sendable () -> Void = {}
+    public var isPresented: @MainActor @Sendable () -> Bool = { false }
+    public var content: @MainActor @Sendable () -> AnyView? = { nil }
+    public var config: @MainActor @Sendable () -> FHKPopupConfig? = { nil }
+    public var showContent: @MainActor @Sendable ((@Sendable () -> Void)?, AnyView, FHKPopupConfig?) -> Void = { _, _, _ in }
+    public var dismiss: @MainActor @Sendable () -> Void = {}
     
     public init() {}
     
