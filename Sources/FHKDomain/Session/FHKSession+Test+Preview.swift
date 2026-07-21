@@ -21,6 +21,8 @@ public struct FHKSession: Sendable {
     public var initializeSession: @Sendable () async -> Void = { }
     public var login: @Sendable () async throws -> Void = { }
     public var logout: @Sendable () async throws -> Void = { }
+    
+    public init() {}
 }
 
 public extension FHKSession {
