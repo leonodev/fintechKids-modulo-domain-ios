@@ -22,14 +22,14 @@ public struct FHKModal: Sendable {
     public var isPresented: @MainActor @Sendable () -> Bool = { false }
     public var content: @MainActor @Sendable () -> AnyView? = { nil }
     public var config: @MainActor @Sendable () -> FHKPopupConfig? = { nil }
-    public var showContent: @MainActor @Sendable ((@Sendable () -> Void)?, AnyView, FHKPopupConfig?) -> Void = { _, _, _ in }
+    public var showContent: @MainActor @Sendable ((@MainActor @Sendable () -> Void)?, AnyView, FHKPopupConfig?) -> Void = { _, _, _ in }
     public var dismiss: @MainActor @Sendable () -> Void = {}
     
     public init() {}
     
     public func show<V: View>(
         config: FHKPopupConfig? = nil,
-        onDismiss: (@Sendable () -> Void)? = nil,
+        onDismiss: (@MainActor @Sendable () -> Void)? = nil,
         @ViewBuilder content: () -> V
     ) {
         let erasedView = AnyView(content())
