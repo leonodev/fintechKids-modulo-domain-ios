@@ -17,7 +17,7 @@ import Foundation
  */
 
 public struct FHKSession: Sendable {
-    public var isAuthenticated: @Sendable (Bool) -> Void = { _ in }
+    public var isAuthenticated: @Sendable () -> Bool = { false }
     public var initializeSession: @Sendable () async -> Void = { }
     public var login: @Sendable () async throws -> Void = { }
     public var logout: @Sendable () async throws -> Void = { }
