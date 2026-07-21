@@ -20,6 +20,7 @@ public enum FHKSupabaseError: FHKError {
     case tooManyRequests
     case userAlreadyExists(context: String? = nil)
     case accessToken
+    case notImplemented
     
     // Errors PostgREST
     case dateInvalid(context: String? = nil)          // Error 22007: Incorrect date format
@@ -60,6 +61,9 @@ public enum FHKSupabaseError: FHKError {
             
         case .tableNameUnknown:
             return "msn_update_balance_fail"
+            
+        case .notImplemented:
+            return ""
         }
     }
     
@@ -107,6 +111,9 @@ public enum FHKSupabaseError: FHKError {
             
         case .unknown(let message):
             return "Unknown error: \(message)"
+            
+        case .notImplemented:
+            return "Error: not implemented"
         }
     }
     
@@ -154,6 +161,9 @@ public enum FHKSupabaseError: FHKError {
         case .unknown(let message):
             // Para el desconocido, enviamos el prefijo y un trozo del error real
             return "unknown_error: \(message.prefix(70))"
+            
+        case .notImplemented:
+            return "Error: not implemented"
         }
     }
     
