@@ -36,3 +36,20 @@ public struct FHKModal: Sendable {
         self.showContent(onDismiss, erasedView, config)
     }
 }
+
+@MainActor
+public extension FHKModal {
+    
+    /// Version by Tests
+    static var test: Self {
+        Self()
+    }
+    
+    /// Version by Previews of SwiftUI
+    static var preview: Self {
+        var modal = Self()
+        modal.isPresented = { true }
+        modal.content = { AnyView(Text("Modal de prueba")) }
+        return modal
+    }
+}
