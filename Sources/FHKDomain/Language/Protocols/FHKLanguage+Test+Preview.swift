@@ -38,6 +38,7 @@ public extension FHKLanguage {
         var mock = FHKLanguage()
         mock.selectedLanguage = { "es" }
         mock.languageTypeFromCode = { _ in .es }
+        mock.currentBundle = { .forLanguage("es") }
         return mock
     }
     
@@ -45,6 +46,7 @@ public extension FHKLanguage {
         var mock = FHKLanguage()
         mock.selectedLanguage = { "en" }
         mock.languageTypeFromCode = { _ in .en }
+        mock.currentBundle = { .forLanguage("en") }
         return mock
     }
     
@@ -52,6 +54,7 @@ public extension FHKLanguage {
         var mock = FHKLanguage()
         mock.selectedLanguage = { "it" }
         mock.languageTypeFromCode = { _ in .it }
+        mock.currentBundle = { .forLanguage("it") }
         return mock
     }
     
@@ -59,7 +62,18 @@ public extension FHKLanguage {
         var mock = FHKLanguage()
         mock.selectedLanguage = { "fr" }
         mock.languageTypeFromCode = { _ in .fr }
+        mock.currentBundle = { .forLanguage("fr") }
         return mock
+    }
+}
+
+private extension Bundle {
+    static func forLanguage(_ code: String) -> Bundle {
+        guard let path = Bundle.main.path(forResource: code, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return .main
+        }
+        return bundle
     }
 }
 
