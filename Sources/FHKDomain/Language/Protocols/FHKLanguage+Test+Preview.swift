@@ -1,5 +1,5 @@
 //
-//  LanguageManagerProtocol.swift
+//  FHKLanguage+Test+Preview.swift
 //  FHKDomain
 //
 //  Created by Fredy Leon on 25/2/26.
