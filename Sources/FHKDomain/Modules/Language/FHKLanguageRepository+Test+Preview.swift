@@ -20,8 +20,21 @@ public struct FHKLanguageRepository: Sendable {
 }
 
 public extension FHKLanguageRepository {
+    
     static var test: Self {
-       Self()
+        Self()
+    }
+    
+    static var preview: Self {
+        var mock = Self()
+        
+        mock.fetchConfig = {
+            ["es", "it", "en", "fr"]
+        }
+        
+        mock.changeLanguageApp = { _ in }
+        
+        return mock
     }
 }
 
