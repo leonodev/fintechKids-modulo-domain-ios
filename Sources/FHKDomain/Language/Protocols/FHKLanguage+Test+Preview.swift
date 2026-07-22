@@ -30,5 +30,37 @@ public struct FHKLanguage: Sendable {
 
 
 public extension FHKLanguage {
-    static var test: Self { Self() }
+    static var test: Self {
+        Self()
+    }
+    
+    static var preview: Self {
+        var mock = FHKLanguage()
+        mock.selectedLanguage = { "es" }
+        mock.languageTypeFromCode = { _ in .es }
+        return mock
+    }
+    
+    static var english: Self {
+        var mock = FHKLanguage()
+        mock.selectedLanguage = { "en" }
+        mock.languageTypeFromCode = { _ in .en }
+        return mock
+    }
+    
+    static var italian: Self {
+        var mock = FHKLanguage()
+        mock.selectedLanguage = { "it" }
+        mock.languageTypeFromCode = { _ in .it }
+        return mock
+    }
+    
+    static var french: Self {
+        var mock = FHKLanguage()
+        mock.selectedLanguage = { "fr" }
+        mock.languageTypeFromCode = { _ in .fr }
+        return mock
+    }
 }
+
+
