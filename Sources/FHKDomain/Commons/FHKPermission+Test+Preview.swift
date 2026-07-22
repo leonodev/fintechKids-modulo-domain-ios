@@ -42,27 +42,31 @@ public extension FHKPermission {
     
     static var preview: Self {
         var mock = FHKPermission()
-        
-        mock.title = { "Notification Permission" }
-        mock.message = { "We need this permission to notify you when you receive a payment." }
-        mock.titleButtonSetting = { "Ir a Ajustes" }
-        mock.titleButtonLater = { "Not now" }
-        mock.status = { .notDetermined }
+        mock.status = { .authorized }
         mock.requestPermission = { .authorized }
         
         return mock
     }
     
-    /// Preset para probar en Previews el escenario "Permiso Concedido"
-    static var authorized: Self {
-        var mock = FHKPermission.preview
-        mock.status = { .authorized }
+    /// To test the "Permission notDetermined" scenario in Previews
+    static var notDetermined: Self {
+        var mock = Self()
+        mock.title = { "Permission not determined" }
+        mock.message = { "We need access to the camera to continue." }
+        mock.titleButtonSetting = { "Go to Settings" }
+        mock.titleButtonLater = { "Not now" }
+        
+        mock.status = { .notDetermined }
         return mock
     }
     
-    /// Preset para probar en Previews el escenario "Permiso Denegado" (muestra el botón a Ajustes)
+    /// To test the "Permission Denied" scenario in Previews (displays the button to Settings)
     static var denied: Self {
-        var mock = FHKPermission.preview
+        var mock = Self()
+        mock.title = { "Permission Denied" }
+        mock.message = { "You have disabled camera permission." }
+        mock.titleButtonSetting = { "Go to Settings" }
+        mock.titleButtonLater = { "Not now" }
         mock.status = { .denied }
         return mock
     }
