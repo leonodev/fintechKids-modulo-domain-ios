@@ -13,8 +13,8 @@ public protocol FHKLanguageRepositoryProtocol: FHKInjectableProtocol {
 */
 
 public struct FHKLanguageRepository: Sendable {
-    var fetchConfig: @Sendable() async -> [String] = { [] }
-    var changeLanguageApp: @Sendable(String) async -> Void = { _ in }
+    public var fetchConfig: @Sendable() async -> [String] = { [] }
+    public var changeLanguageApp: @Sendable(String) async -> Void = { _ in }
     
     public init() {}
 }
