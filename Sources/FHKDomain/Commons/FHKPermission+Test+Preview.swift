@@ -23,11 +23,11 @@ public protocol FHKPermissionProtocol: Sendable {
 import Foundation
 
 public struct FHKPermission: Sendable {
-    public var title: @Sendable () -> String = { "" }
-    public var message: @Sendable () -> String = { "" }
+    public var title: @MainActor @Sendable () -> String = { "" }
+    public var message: @MainActor @Sendable () -> String = { "" }
     public var status: @MainActor @Sendable () -> PermissionStatus = { .notDetermined }
-    public var titleButtonSetting: @Sendable () -> String = { "" }
-    public var titleButtonLater: @Sendable () -> String = { "" }
+    public var titleButtonSetting: @MainActor @Sendable () -> String = { "" }
+    public var titleButtonLater: @MainActor @Sendable () -> String = { "" }
     public var requestPermission: @MainActor @Sendable () async -> PermissionStatus = { .denied }
 
     public init() {}
