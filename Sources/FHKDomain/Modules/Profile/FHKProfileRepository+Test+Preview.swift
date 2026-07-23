@@ -19,7 +19,7 @@ public struct FHKProfileRepository: Sendable {
     public var logout: @Sendable() async throws -> Void = { }
     public var deleteKeychain: @Sendable(String) throws -> Void = { _ in }
     public var getEmailParent: @Sendable() throws -> String? = { nil }
-    public var getLanguageCurrent: @Sendable() async -> String = { "" }
+    public var getLanguageCurrent: @Sendable() async throws -> String = { "" }
     public var setNewLanguage: @Sendable(String) -> Void = { _ in }
     public var getFamilyName: @Sendable() async -> String? = { nil }
     
