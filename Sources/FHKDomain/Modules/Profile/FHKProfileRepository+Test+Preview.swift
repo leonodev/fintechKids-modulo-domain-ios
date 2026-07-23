@@ -32,7 +32,7 @@ public extension FHKProfileRepository {
         Self()
     }
     
-    static func preview(lng: LanguageType) -> Self {
+    static func preview(_ lng: LanguageType) -> Self {
         var repository = Self()
         repository.getEmailParent = { "user@domian.com" }
         repository.getLanguageCurrent = { lng.code }
