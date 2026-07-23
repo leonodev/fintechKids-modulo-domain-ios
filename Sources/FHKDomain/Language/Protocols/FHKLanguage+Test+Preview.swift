@@ -34,35 +34,12 @@ public extension FHKLanguage {
         Self()
     }
     
-    static var preview: Self {
-        var mock = FHKLanguage()
-        mock.selectedLanguage = { "es" }
-        mock.languageTypeFromCode = { _ in .es }
-        mock.currentBundle = { .forLanguage("es") }
-        return mock
-    }
-    
-    static var english: Self {
-        var mock = FHKLanguage()
-        mock.selectedLanguage = { "en" }
-        mock.languageTypeFromCode = { _ in .en }
-        mock.currentBundle = { .forLanguage("en") }
-        return mock
-    }
-    
-    static var italian: Self {
-        var mock = FHKLanguage()
-        mock.selectedLanguage = { "it" }
-        mock.languageTypeFromCode = { _ in .it }
-        mock.currentBundle = { .forLanguage("it") }
-        return mock
-    }
-    
-    static var french: Self {
-        var mock = FHKLanguage()
-        mock.selectedLanguage = { "fr" }
-        mock.languageTypeFromCode = { _ in .fr }
-        mock.currentBundle = { .forLanguage("fr") }
+    static func preview(_ lng: LanguageType) -> Self {
+        var mock = Self()
+        mock.selectedLanguage = { lng.code }
+        mock.languageTypeFromCode = { _ in lng }
+        mock.currentBundle = { .forLanguage(lng.code) }
+        
         return mock
     }
 }
