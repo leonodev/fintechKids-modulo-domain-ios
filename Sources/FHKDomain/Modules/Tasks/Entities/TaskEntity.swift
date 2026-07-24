@@ -31,3 +31,21 @@ public struct TaskEntity: DomainModelProtocol {
         self.emailParent = emailParent
     }
 }
+
+public extension TaskEntity {
+    static func previewItem(_ count: Int) -> [Self] {
+        var previewItems = [TaskEntity]()
+        
+        for i in 1...5 {
+            let item = TaskEntity(createdAt: Date().toUTC,
+                                  name: "do the class homework \(i)",
+                                  description: "do the class homework before Sunday",
+                                  timeGranted: "2 Hours",
+                                  coinsGranted: 40,
+                                  emailParent: "user@domain.com")
+            
+            previewItems.append(item)
+        }
+        return previewItems
+    }
+}

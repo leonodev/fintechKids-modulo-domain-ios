@@ -45,14 +45,7 @@ public extension FHKSupabaseGoal {
         
         goals.createGoal = { _ in }
         goals.getGoals = { emailParent in
-            [
-                GoalEntity(expirationDate: Date().toUTC,
-                           name: "PSP5",
-                           emailParent: "parent@domain.com",
-                           value: 900,
-                           measureType: "coins",
-                           status: .inCurse)
-            ]
+            GoalEntity.previewItem(2)
         }
         
         return goals

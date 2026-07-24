@@ -39,14 +39,7 @@ public extension FHKTasksRepository {
         tasksRepository.createTask = { _ in }
         
         tasksRepository.getTasks = { emailParent, forceRefresh in
-            [
-                TaskEntity(createdAt: Date().toUTC,
-                           name: "do the class homework",
-                           description: "do the class homework before Sunday",
-                           timeGranted: "2 Hours",
-                           coinsGranted: 40,
-                           emailParent: emailParent)
-            ]
+            TaskEntity.previewItem(2)
         }
         
         return tasksRepository
