@@ -42,4 +42,22 @@ public extension FHKConfiguration {
     static var test: Self {
         Self()
     }
+    
+    static var preview: Self {
+        var config = Self()
+        
+        config.parentMail = {
+            "parent@domain.com"
+        }
+        
+        config.familyName = {
+            "Family Dummy"
+        }
+        
+        config.approvePin = {
+            "0000"
+        }
+        
+        return config
+    }
 }
