@@ -21,6 +21,9 @@ public struct FHKTasksRepository: Sendable {
     public var getTasks:
     @Sendable(String, Bool) async throws -> [TaskEntity] = { _, _ in  []}
     
+    public var clearCache:
+    @Sendable() async -> Void = {}
+    
     public init() {}
 }
 
