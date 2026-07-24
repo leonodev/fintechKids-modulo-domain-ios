@@ -23,6 +23,8 @@ public struct FHKSupabaseMembers: Sendable {
     
     public var deleteMember:
     @Sendable(UUID) async throws -> Void = { _ in }
+    
+    public init() {}
 }
 
 public extension FHKSupabaseMembers {
@@ -33,6 +35,12 @@ public extension FHKSupabaseMembers {
     
     static var preview: Self {
         var supabase = Self()
+        
+        supabase.fetchFamilyMembers = { email in
+            return [MemberEntity(emailParent: "parent@domain.com",
+                                 memberName: "new Member",
+                                 familyName: "Family Dummy")]
+        }
         
         return supabase
     }
