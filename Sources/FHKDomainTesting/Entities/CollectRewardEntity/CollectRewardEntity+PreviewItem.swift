@@ -11,7 +11,7 @@ import FHKDomain
 public extension CollectRewardEntity {
     static var previewItem: Self {
         CollectRewardEntity(task: TaskEntity.previewItem,
-                            receiveRewardType: .assignToGoal,
+                            receiveRewardType: .sendToSavings,
                             rewardType: .coins)
     }
 }
