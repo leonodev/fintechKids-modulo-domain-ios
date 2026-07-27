@@ -10,9 +10,9 @@ import Foundation
 
 public extension RewardEntity {
     static func previewItem(_ count: Int) -> [Self] {
-        var previewItems = [RewardEntity]()
+        var previewItems = [Self]()
         
-        for i in 1...5 {
+        for i in 1...count {
             let item = RewardEntity(createdAt: Date().toUTC,
                                     name: "Go to Karting \(i)",
                                     timeRequiered: "6 hours",

@@ -10,9 +10,9 @@ import FHKDomain
 
 public extension RewardCollectedEntity {
     static func previewItem(_ count: Int) -> [Self] {
-        var previewItems = [RewardCollectedEntity]()
+        var previewItems = [Self]()
         
-        for i in 1...5 {
+        for i in 1...count {
             let item = RewardCollectedEntity(id: 1,
                                              createdDate: Date().toUTC,
                                              member: MemberEntity.previewItem,
