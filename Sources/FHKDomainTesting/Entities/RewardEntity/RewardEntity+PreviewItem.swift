@@ -13,7 +13,8 @@ public extension RewardEntity {
         var previewItems = [Self]()
         
         for i in 1...count {
-            let item = RewardEntity(createdAt: Date().toUTC,
+            let item = RewardEntity(id: i,
+                                    createdAt: Date().toUTC,
                                     name: "Go to Karting \(i)",
                                     timeRequiered: "6 hours",
                                     coinsRequiered: 300,
