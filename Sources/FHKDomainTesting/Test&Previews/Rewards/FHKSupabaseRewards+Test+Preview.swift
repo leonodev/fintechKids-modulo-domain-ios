@@ -13,17 +13,17 @@ public extension FHKSupabaseRewards {
         Self()
     }
     
-    static func preview(reward: Int = 2, rewardCollected: Int = 2) -> Self {
+    static var preview: Self {
         var mock = Self()
         
         mock.createReward = { _ in }
         
         mock.fetchRewards = { _ in
-            RewardEntity.previewItem(reward)
+            RewardEntity.previewItem(1)
         }
         
         mock.fetchRewardCollected = {  _ in
-            RewardCollectedEntity.previewItem(rewardCollected)
+            RewardCollectedEntity.previewItem(1)
         }
         
         return mock
