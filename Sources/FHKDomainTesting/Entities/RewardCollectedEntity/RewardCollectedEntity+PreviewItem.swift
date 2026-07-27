@@ -1,5 +1,5 @@
 //
-//  RewardCollectedEntity+Preview.swift
+//  RewardCollectedEntity+PreviewItem.swift
 //  FHKDomain
 //
 //  Created by fleon  on 27/7/26.

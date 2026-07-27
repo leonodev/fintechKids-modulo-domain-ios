@@ -9,18 +9,25 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
+        // PRODUCTION CODE
         .library(
             name: "FHKDomain",
             targets: ["FHKDomain"]
         ),
+        // MOCKS / PREVIEWS / TESTS
+        .library(
+            name: "FHKDomainTesting",
+            targets: ["FHKDomainTesting"]
+        )
     ],
     dependencies: [
-        .package(url: "https://github.com/leonodev/fintechKids-modulo-utils-ios.git",
-                 branch: "main")],
+        .package(
+            url: "https://github.com/leonodev/fintechKids-modulo-utils-ios.git",
+            branch: "main"
+        )
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+        // Primary Target (Production)
         .target(
             name: "FHKDomain",
             dependencies: [
@@ -28,9 +35,20 @@ let package = Package(
                 .product(name: "FHKUtils", package: "fintechKids-modulo-utils-ios")
             ]
         ),
+        // Testing Target (Mocks and Previews)
+        .target(
+            name: "FHKDomainTesting",
+            dependencies: [
+                "FHKDomain" // It relies on FHKDomain to extend its entities.
+            ]
+        ),
+        // Unit Test target for the FHKDomain itself
         .testTarget(
             name: "FHKDomainTests",
-            dependencies: ["FHKDomain"]
-        ),
+            dependencies: [
+                "FHKDomain",
+                "FHKDomainTesting" 
+            ]
+        )
     ]
 )
