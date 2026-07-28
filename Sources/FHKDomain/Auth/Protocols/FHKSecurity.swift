@@ -20,10 +20,3 @@ public struct FHKSecurity: Sendable {
     
     public init() {}
 }
-
-
-public extension FHKSecurity {
-    static var test: Self {
-        Self()
-    }
-}

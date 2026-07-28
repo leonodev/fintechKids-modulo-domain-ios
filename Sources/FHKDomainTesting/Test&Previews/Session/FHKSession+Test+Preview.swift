@@ -1,0 +1,14 @@
+//
+//  FHKSession+Test+Preview.swift
+//  FHKDomain
+//
+//  Created by fleon  on 27/7/26.
+//
+
+import FHKDomain
+
+public extension FHKSession {
+    static var test: Self {
+        Self()
+    }
+}

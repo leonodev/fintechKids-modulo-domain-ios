@@ -17,8 +17,4 @@ public struct FHKRegisterRepository: Sendable {
     public init() {}
 }
 
-public extension FHKRegisterRepository {
-    static var test: Self {
-        Self()
-    }
-}
+

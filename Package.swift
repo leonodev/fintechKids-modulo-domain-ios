@@ -14,7 +14,7 @@ let package = Package(
             name: "FHKDomain",
             targets: ["FHKDomain"]
         ),
-        // MOCKS / PREVIEWS / TESTS
+        // PREVIEWS / TESTS
         .library(
             name: "FHKDomainTesting",
             targets: ["FHKDomainTesting"]

@@ -6,7 +6,7 @@
 //
 
 /*
-public protocol FHKAnalyticsProtocol: FHKInjectableProtocol {
+public protocol FHKAnalyticsProtocol {
     func track(_ event: AnalyticsEvent)
 }
 */
@@ -15,11 +15,4 @@ public struct FHKAnalytics: Sendable {
     public var track: @Sendable(AnalyticsEvent) -> Void = { _ in }
     
     public init() {}
-}
-
-
-public extension FHKAnalytics {
-    static var test: Self {
-        Self()
-    }
 }

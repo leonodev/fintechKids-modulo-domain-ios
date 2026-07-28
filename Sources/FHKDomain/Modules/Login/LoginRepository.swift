@@ -19,10 +19,3 @@ public struct FHKLoginRepository: Sendable {
 
     public init() {}
 }
-
-
-public extension FHKLoginRepository {
-    static var test: Self {
-        Self()
-    }
-}
