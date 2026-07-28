@@ -12,8 +12,8 @@ public extension GoalMemberEntity {
     static func previewItem(_ count: Int) -> [Self] {
         var previewItems = [GoalMemberEntity]()
         
-        for i in 1...5 {
-            let item = GoalMemberEntity(goalId: 123,
+        for i in 1...count {
+            let item = GoalMemberEntity(goalId: i,
                                         memberId: UUID.init(),
                                         nameGoal: "PSP5 \(i)",
                                         rewardsSystemType: "coins",

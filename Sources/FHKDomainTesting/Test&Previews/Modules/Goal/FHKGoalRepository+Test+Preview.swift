@@ -25,11 +25,11 @@ public extension FHKGoalRepository {
         repository.createGoalMember = { _ in }
         
         repository.fetchGoalMember = { memberId, isForceRefresh in
-            GoalMemberEntity.previewItem(3)
+            GoalMemberEntity.previewItem(count)
         }
         
         repository.fetchGoalMemberFamily = { emailParent, isForceRefresh in
-            GoalMemberEntity.previewItem(1)
+            GoalMemberEntity.previewItem(count)
         }
         
         repository.clearCache = {}
