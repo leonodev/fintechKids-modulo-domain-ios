@@ -13,13 +13,13 @@ public extension FHKGoalRepository {
         Self()
     }
     
-    static var preview: Self {
+    static func preview(_ count: Int) -> Self {
         var repository = Self()
         
         repository.clearCache = {}
         
         repository.getGoals = { _, _ in
-            GoalEntity.previewItem(2)
+            GoalEntity.previewItem(count)
         }
         
         repository.createGoalMember = { _ in }
