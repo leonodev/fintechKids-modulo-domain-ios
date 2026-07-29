@@ -5,13 +5,13 @@
 //  Created by Fredy Leon on 1/5/26.
 //
 
-public enum ReceiveFormType {
+public enum ReceiveFormType: Sendable {
     case sendToSavings
     case changeByRewards
     case assignToGoal
 }
 
-public struct CollectRewardEntity: Equatable, Hashable {
+public struct CollectRewardEntity: Sendable, Equatable, Hashable {
     public let task: TaskEntity
     public let receiveRewardType: ReceiveFormType
     public let rewardType: WorkType
