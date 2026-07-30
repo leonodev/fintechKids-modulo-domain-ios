@@ -34,7 +34,7 @@ public enum AnalyticsEvent: Sendable {
         public let type: String
         public let message: String
         
-        public init(from fhkError: any FHKError) {
+        public init(from fhkError: some FHKError) {
             self.type = fhkError.analyticsIdentifier ?? "unknown_error"
             self.message = fhkError.logMessage
         }
