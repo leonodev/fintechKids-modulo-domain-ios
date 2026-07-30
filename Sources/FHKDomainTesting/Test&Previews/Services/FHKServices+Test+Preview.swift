@@ -9,6 +9,12 @@ import FHKDomain
 
 public extension FHKServices {
     static var test: Self {
-        Self()
+        var mock = Self()
+        
+        mock.getURL = { _, _, _ in
+            return "https://dev.fintechkids.com"
+        }
+        
+        return mock
     }
 }
